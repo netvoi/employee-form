@@ -1,22 +1,32 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
+    name: 'Main',
     path: '/',
-    name: 'Home',
-    component: Home,
+    component: () => import('@/views/Main.vue'),
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    name: 'Create form',
+    path: '/create',
+    component: () => import('@/views/CreateForm.vue'),
+  },
+  {
+    name: 'Edit form',
+    path: '/edit/:id',
+    component: () => import('@/views/EditForm.vue'),
+  },
+  {
+    name: '404',
+    path: '/404',
+    component: () => import('@/views/404.vue'),
+  },
+  {
+    path: '*',
+    redirect: '/404',
   },
 ];
 
