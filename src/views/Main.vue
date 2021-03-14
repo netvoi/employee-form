@@ -43,9 +43,6 @@
         :per-page="perPage"
       ></b-pagination>
     </div>
-
-    <b-modal id="modal-alert" title="The entry will be deleted. Sure?">
-    </b-modal>
   </div>
 </template>
 
@@ -111,7 +108,7 @@ export default {
       localStorage.setItem('employee', JSON.stringify(currentItems));
     },
     warningModal(row) {
-      this.$bvModal.msgBoxConfirm('Are you sure?')
+      this.$bvModal.msgBoxConfirm('The entry will be deleted. Sure?')
         .then((flag) => {
           if (flag) {
             this.removeHandler(row);
