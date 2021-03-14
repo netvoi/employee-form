@@ -83,6 +83,7 @@ export default {
         {
           key: 'description',
           label: 'Description',
+          class: 'description',
         },
         {
           key: 'actions',
@@ -152,5 +153,10 @@ export default {
 .action {
   width: 100px;
   text-align: center;
+}
+
+.description {
+  word-break: break-all;
+  white-space: pre-wrap;
 }
 </style>
